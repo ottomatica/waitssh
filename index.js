@@ -4,7 +4,7 @@ async function wait(sshInfo, timeout=5000) {
     do {
         connected = await connect(sshInfo.port, sshInfo.hostname).catch((error) => {
             // terminate due to fatal exception.
-            console.log(error);
+            throw error;
         });
 
         // We have either timed out or received a ECONNRESET.
