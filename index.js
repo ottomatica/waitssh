@@ -10,7 +10,7 @@ async function wait(sshInfo, timeout=5000) {
         // We have either timed out or received a ECONNRESET.
         if (!connected) {
             // Let's back-off a few seconds and retry again.
-            await utils.timeout(timeout);
+            await delay(timeout);
         }
     } while (!connected);
 }
@@ -57,6 +57,10 @@ async function connect(port, host) {
             reject(e);
         }
     });
+}
+
+async function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 module.exports = wait;
