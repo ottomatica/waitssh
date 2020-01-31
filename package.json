@@ -1,0 +1,22 @@
+{
+  "name": "waitssh",
+  "version": "1.0.0",
+  "description": "Cross-platform utility that waits for ssh to become available",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ottomatica/waitssh.git"
+  },
+  "keywords": [
+    "ssh",
+    "wait"
+  ],
+  "author": "ottomatica",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ottomatica/waitssh/issues"
+  },
+  "homepage": "https://github.com/ottomatica/waitssh#readme",
+  "dependencies": {}
+}
