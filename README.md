@@ -2,7 +2,7 @@
 
 `waitssh` is a cross-platform utility that allows waiting for ssh to become available.
 
-One common use case is for waiting for Virtual Machines to boot and waiting for sshd to be ready. Other tools, such as [wait-on](https://www.npmjs.com/package/wait-on) are agnostic to the network setup and will fail in cases of such as port-forwarding.
+One common use case is for waiting for Virtual Machines to boot and waiting for sshd to be ready. Other tools, such as [wait-on](https://www.npmjs.com/package/wait-on) are agnostic to the network setup and will fail in cases such as port-forwarding.
 
 ## Implementation
 
@@ -13,6 +13,8 @@ How does it work? `waitssh` implements the first phase of the SSH protocol speci
 `waitssh` open a socket, attempts to write send a client version string to the ssh sever. `waitssh` gracefully handles `ECONNRESET` errors and reconnects as needed until the server responses with the appropriate version string.
 
 ## Using waitssh
+
+`waitssh` does not need authentication information to verify the ssh connection being ready, only the hostname and port.
 
 ```js
 const waitssh = require('waitssh');
