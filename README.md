@@ -1,6 +1,6 @@
 # waitssh
 
-`waitssh` is a cross-platform utility that allows waiting for ssh to become available.
+`waitssh` is a cross-platform utility that waits for ssh to become available.
 
 One common use case is for waiting for Virtual Machines to boot and waiting for sshd to be ready. Other tools, such as [wait-on](https://www.npmjs.com/package/wait-on) are agnostic to the network setup and will fail in cases such as port-forwarding.
 
