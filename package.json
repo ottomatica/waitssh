@@ -1,6 +1,6 @@
 {
   "name": "waitssh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cross-platform utility that waits for ssh to become available",
   "main": "index.js",
   "scripts": {},
