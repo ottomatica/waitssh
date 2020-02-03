@@ -34,8 +34,8 @@ async function connect(port, host) {
                     s.destroy();
                     resolve(true)
                 }
-                // We are talking to something else that isn't a ssh server. bail.
-                else (reject(d));
+                // We are talking to something else that isn't a ssh server, comments prior to string, or empty data.
+                else (resolve(false));
             })
             // This is a good sign, this means the VM has booted up and networking is up.
             // However, the ssh server is not quite ready yet.
