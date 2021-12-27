@@ -2,7 +2,7 @@ async function wait(sshInfo, timeout = 5000, verbose = true) {
     // We will wait until we can verify a connection to ssh server.
     let connected = false;
     do {
-        connected = await connect(sshInfo.port, sshInfo.hostname).catch((error) => {
+        connected = await connect(sshInfo.port, sshInfo.hostname, verbose).catch((error) => {
             // terminate due to fatal exception.
             throw error;
         });
