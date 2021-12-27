@@ -1,4 +1,4 @@
-async function wait(sshInfo, timeout=5000) {
+async function wait(sshInfo, timeout = 5000, verbose = true) {
     // We will wait until we can verify a connection to ssh server.
     let connected = false;
     do {
@@ -16,7 +16,7 @@ async function wait(sshInfo, timeout=5000) {
 }
 
 
-async function connect(port, host) {
+async function connect(port, host, verbose = true) {
     const s = new require('net').Socket();
     return new Promise((resolve, reject) => {
         try {
@@ -29,7 +29,7 @@ async function connect(port, host) {
             // We finally heard something from the ssh server, which should be the version string!
             // https://tools.ietf.org/html/rfc4253#section-4.2
             s.on('data', (d) => {
-                console.log('\nreceived from ssh server: ', d.toString())
+                if (verbose) console.log('\nreceived from ssh server: ', d.toString());
                 if (d.toString().includes("SSH-2")) {
                     s.destroy();
                     resolve(true)
